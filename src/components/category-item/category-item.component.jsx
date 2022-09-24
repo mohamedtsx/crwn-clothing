@@ -1,4 +1,4 @@
-import { BackgroundImage, CategoryContainer, CategoryBodyContainer } from './category-item.style.jsx'
+import { BackgroundImage, CategoryContainer, CategoryBodyContainer } from './category-item.style'
 import { useNavigate } from 'react-router-dom';
 
 const CategoryItem = ({item}) => {

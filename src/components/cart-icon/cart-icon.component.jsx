@@ -1,4 +1,4 @@
-import { CartIconContainer, ShoppingIcon, ItemCount } from './cart-icon.style.jsx';
+import { CartIconContainer, ShoppingIcon, ItemCount } from './cart-icon.style';
 import { useContext } from 'react';
 import { CartContext } from '../../context/cart.context';
 

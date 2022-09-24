@@ -1,4 +1,4 @@
-import {CartItemContainer, ItemDetails} from './cart-item.style.jsx';
+import {CartItemContainer, ItemDetails} from './cart-item.style';
 
 const CartItem = (prop) => {
     const {name, price, imageUrl, quantity} = prop.cartItem;
