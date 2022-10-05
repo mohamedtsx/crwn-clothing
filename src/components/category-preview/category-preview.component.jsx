@@ -1,12 +1,15 @@
 import './category-preview.style.scss';
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CategoriesContext } from '../../context/categories.context';
 import ProductCard from '../product-card/product-card.component';
+
+import { useSelector } from 'react-redux';
+import * as categoriesSelectores from '../../store/categories/categories.selectores';
 
 const CategoryPreview = () => {
 
-    const { categoriesMap } = useContext(CategoriesContext);
+    // const { categoriesMap } = useContext(CategoriesContext);
+
+    const categoriesMap = useSelector(categoriesSelectores.categoriesMap);
     const navigate = useNavigate();
 
     return(

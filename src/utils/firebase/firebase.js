@@ -49,14 +49,9 @@ export const createUserDocumentFromAuth = async (user) => {
     const {displayName, email} = user;
     const createdAt = new Date()
     const colRef = doc(db, 'users', user.uid);
-    //
-    //
-    console.log(colRef)
 
     const snapShot = await getDoc(colRef);
-    //
-    //
-    console.log(snapShot.exists())
+
 
     if (!snapShot.exists()) {
         try {
@@ -97,7 +92,6 @@ export const getCategoriesAndDocuments = async () => {
         return acc;
     }, {});
 
-    // console.log(categoriesMap)
     return categoriesMap;
 }
 

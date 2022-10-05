@@ -2,7 +2,7 @@ import {CartItemContainer, ItemDetails} from './cart-item.style';
 
 const CartItem = (prop) => {
     const {name, price, imageUrl, quantity} = prop.cartItem;
-    console.log('hello')
+
     return(
 
         <CartItemContainer>
