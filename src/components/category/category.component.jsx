@@ -7,7 +7,6 @@ import * as categoriesSelectores from '../../store/categories/categories.selecto
 import './category.style.scss';
 
 const Category = () => {
-    // const { categoriesMap } = useContext(CategoriesContext);
     const { category } = useParams();
 
     const categoriesMap = useSelector(categoriesSelectores.categoriesMap);

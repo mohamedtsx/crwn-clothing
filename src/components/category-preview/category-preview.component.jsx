@@ -7,8 +7,6 @@ import * as categoriesSelectores from '../../store/categories/categories.selecto
 
 const CategoryPreview = () => {
 
-    // const { categoriesMap } = useContext(CategoriesContext);
-
     const categoriesMap = useSelector(categoriesSelectores.categoriesMap);
     const navigate = useNavigate();
 
