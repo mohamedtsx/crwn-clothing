@@ -1,3 +1,3 @@
 # crwn-clothing
 
-- (Live Demo)["https://crwn-clothing-mk.netlify.app/"]
+- (Live Demo)[https://crwn-clothing-mk.netlify.app/]
