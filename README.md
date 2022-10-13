@@ -5,4 +5,5 @@
 - [Course Link](https://www.udemy.com/share/101WH43@yukzjcpy8S4tu-NSXEon7iYbj4BFdQQKm7i8UNr86R5yUumF9KS6cDJ_blI4jpj37g==/)
 
 ## Built With 
-![built with](https://skillicons.dev/icons?i=aws,gcp,azure,react,vue,flutter&perline=3)
+<img src="https://skillicons.dev/icons?i=git,kubernetes,docker,c,vim" />
+
