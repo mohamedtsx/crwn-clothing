@@ -7,3 +7,5 @@
 ## Built With 
 <img src="https://skillicons.dev/icons?i=html,scss,js,react,redux,firebase" />
 
+> Finale Project Incomplete...
+
