@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import ProductCard from '../product-card/product-card.component';
 
 import { useSelector } from 'react-redux';
-import * as categoriesSelectores from '../../store/categories/categories.selectores';
+import * as categoriesSelectors from '../../store/categories/categories.selectors';
 
 const CategoryPreview = () => {
 
-    const categoriesMap = useSelector(categoriesSelectores.categoriesMap);
+    const categoriesMap = useSelector(categoriesSelectors.categoriesMap);
     const navigate = useNavigate();
 
     return(
