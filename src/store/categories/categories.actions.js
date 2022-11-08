@@ -4,3 +4,4 @@ export const setCategoriesMap = (categoriesMapToSet) => ({
     type: categoriesTypes.SET_CATEGORIES_MAP,
     payload: categoriesMapToSet
 });
+

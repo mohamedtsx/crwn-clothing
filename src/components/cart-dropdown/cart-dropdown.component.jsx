@@ -4,11 +4,11 @@ import CartItem from '../cart-item/cart-item.component';
 import { useNavigate } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
-import * as cartItemsSelectores from '../../store/cart-items/cart-items.selectores';
+import * as cartItemsSelectors from '../../store/cart-items/cart-items.selectors';
 
 const CartDropdown = () => {
 
-    const cartItems = useSelector(cartItemsSelectores.selectCartItems);
+    const cartItems = useSelector(cartItemsSelectors.selectCartItems);
     const navigate = useNavigate();
 
 

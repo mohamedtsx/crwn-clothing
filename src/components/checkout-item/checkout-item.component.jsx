@@ -9,9 +9,9 @@ const CheckoutItem = ({item}) => {
 
     const {imageUrl, name, quantity, price} = item;
 
-    const incrementHandeler = () => dispatch(cartItemsActions.increment(item));
-    const decrementHandeler = () => dispatch(cartItemsActions.decrement(item));
-    const removeHandeleer = () => dispatch(cartItemsActions.removeItemFromCart(item));
+    const incrementHandler = () => dispatch(cartItemsActions.increment(item));
+    const decrementHandler = () => dispatch(cartItemsActions.decrement(item));
+    const removeHandler = () => dispatch(cartItemsActions.removeItemFromCart(item));
 
     return(
         <div className='checkout-item-container'>
@@ -21,13 +21,13 @@ const CheckoutItem = ({item}) => {
             <span className='name'>{name}</span>
             
             <span className='quantity'>
-                <div className='arrow' onClick={incrementHandeler}>&#10094;</div>
+                <div className='arrow' onClick={incrementHandler}>&#10094;</div>
                 <span className='value'>{quantity}</span>
-                <div className='arrow' onClick={decrementHandeler}>&#10095;</div>
+                <div className='arrow' onClick={decrementHandler}>&#10095;</div>
             </span>
 
             <span className='price'>{price}</span>
-            <button type='button' className='removeBtn' onClick={removeHandeleer}>&#10005;</button>
+            <button type='button' className='removeBtn' onClick={removeHandler}>&#10005;</button>
         </div>
     )
 }

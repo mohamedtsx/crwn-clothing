@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import ProductCard from '../product-card/product-card.component';
 
 import { useSelector } from 'react-redux';
-import * as categoriesSelectors from '../../store/categories/categories.selectors';
+import { selectCategoriesMap } from '../../store/categories/categories.selectors';
 
 const CategoryPreview = () => {
+    console.log('%c categoryPreview use selector with dispatch', 'color: gray')
 
-    const categoriesMap = useSelector(categoriesSelectors.categoriesMap);
+    const categoriesMap = useSelector(selectCategoriesMap);
     const navigate = useNavigate();
 
     return(

@@ -19,17 +19,24 @@ import * as userActions from './store/user/user.actions';
 
 const App = () => {
   const dispatch = useDispatch();
+  //
+  //
+  let tempSolution = true;
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
-        if (user) {
-            createUserDocumentFromAuth(user)
-        }
-        dispatch(userActions.setCurrentUser(user));
-    });
+    if (tempSolution) {
+      
+      const unsubscribe = onAuthStateChangedListener((user) => {
+          if (user) {
+              createUserDocumentFromAuth(user)
+          }
+          dispatch(userActions.setCurrentUser(user));
+      });
+      tempSolution = false;
+      return unsubscribe;
+    }
 
-    return unsubscribe;
-  }, [dispatch])
+  }, [])
 
 
   return (

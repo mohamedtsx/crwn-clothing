@@ -18,7 +18,6 @@ const logger = store => next => action => {
     console.log('%c Next State: %o', 'color: green', store.getState());
     console.groupEnd();
 }
-// but next not a function !!
 
 
 const enhancer = applyMiddleware(logger);

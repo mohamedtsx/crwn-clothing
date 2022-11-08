@@ -1,7 +1,7 @@
 import { CartIconContainer, ShoppingIcon, ItemCount } from './cart-icon.style';
 
 import { useSelector } from 'react-redux';
-import * as cartItemsSelectores from '../../store/cart-items/cart-items.selectores';
+import * as cartItemsSelectores from '../../store/cart-items/cart-items.selectors';
 
 
 const CartIcon = (props) => {
