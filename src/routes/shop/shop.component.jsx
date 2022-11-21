@@ -17,11 +17,11 @@ const Shop = () => {
 
   useEffect(() => {
     if (tempSolution) {
-        const getCategories = async () => {
-          const categoriesMap = await getCategoriesAndDocuments();
-          console.log('%c Dispatch', 'color: red')
-          dispatch(setCategoriesMap(categoriesMap));
-        }
+      const getCategories = async () => {
+        const categoriesMap = await getCategoriesAndDocuments();
+        console.log('%c Dispatch', 'color: red')
+        dispatch(setCategoriesMap(categoriesMap));
+      }
 
       getCategories();
       tempSolution = false;
@@ -39,3 +39,11 @@ const Shop = () => {
 }
 
 export default Shop;
+
+/* 
+Asynchronous Issue:
+  - start 
+  - categoryPreview 
+  - dispatch
+  - categoryPreview 
+*/

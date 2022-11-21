@@ -21,10 +21,10 @@ const App = () => {
   const dispatch = useDispatch();
   //
   //
-  let tempSolution = true;
+  let sayEnough = true;
 
   useEffect(() => {
-    if (tempSolution) {
+    if (sayEnough) {
       
       const unsubscribe = onAuthStateChangedListener((user) => {
           if (user) {
@@ -32,7 +32,7 @@ const App = () => {
           }
           dispatch(userActions.setCurrentUser(user));
       });
-      tempSolution = false;
+      sayEnough = false;
       return unsubscribe;
     }
 
