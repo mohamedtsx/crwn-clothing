@@ -8,9 +8,9 @@ const cartItemsReducer = (state = CARTITEMS_INITIAL_STATE, action) => {
 
         const {cartItems} = state;
         const {type, payload} = action;
-        const found = cartItems.length ? cartItems.find(el => el.id === payload.id): false;
+        const found = cartItems.length && payload ? cartItems.find(el => el.id === payload.id): false;
 
-        // be carfule there are explosive mines !!
+        // be carful there are explosive mines !!
         switch(type) {
             case cartItemsTypes.DECREMENT: 
                 return {...state, cartItems: cartItems.map(el => el.id === payload.id ? {...el, quantity: el.quantity === 1 ? el.quantity : --el.quantity} : el)};

@@ -13,6 +13,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "reselect": "^4.1.7",
     "saas": "^1.0.0",
     "styled-components": "^5.3.5",

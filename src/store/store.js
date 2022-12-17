@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
-// import logger from 'redux-logger';
 import rootReducer from './root.reducer';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 
 const logger = store => next => action => {
@@ -19,9 +20,15 @@ const logger = store => next => action => {
     console.groupEnd();
 }
 
-
 const enhancer = applyMiddleware(logger);
 
-const store = createStore(rootReducer, undefined, enhancer);
+const persistConfig = {
+    key: 'root',
+    storage: storage,
+    blacklist: ['user']
+}
 
-export default store;
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = createStore(persistedReducer, undefined, enhancer);
+export const persistor = persistStore(store);
