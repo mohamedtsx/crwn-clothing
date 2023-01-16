@@ -1,9 +1,5 @@
 import { DirectoryContainer } from './directory.style.jsx'
 import CategoryItem from '../category-item/category-item.component';
-//
-//
-import { Routes, Route} from 'react-router-dom';
-import Category from '../category/category.component';
 import { uuidv4 } from '@firebase/util';
 
 

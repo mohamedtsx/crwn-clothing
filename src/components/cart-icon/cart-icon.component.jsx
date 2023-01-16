@@ -1,11 +1,18 @@
 import { CartIconContainer, ShoppingIcon, ItemCount } from './cart-icon.style';
-import { useContext } from 'react';
-import { CartContext } from '../../context/cart.context';
+
+import { useSelector } from 'react-redux';
+import * as cartItemsSelectores from '../../store/cart-items/cart-items.selectors';
 
 
-const CartIcon = () => {
-    const { isCartOpen, setIsCartOpen, cartItems } = useContext(CartContext);
+const CartIcon = (props) => {
+    
+    const {isCartOpen, setIsCartOpen} = props;
+
     const handelCartIcon = () => setIsCartOpen(isCartOpen ? false : true);
+
+
+    const cartItems = useSelector(cartItemsSelectores.selectCartItems);
+
     const mount = cartItems.reduce((acc, current) => acc + current.quantity, 0);
 
     return(

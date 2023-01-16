@@ -7,7 +7,36 @@ import Checkout from './routes/checkout/checkout.component';
 
 import Category from './components/category/category.component';
 
+
+import { useEffect } from 'react';
+import { 
+  onAuthStateChangedListener,
+  createUserDocumentFromAuth
+} from './utils/firebase/firebase';
+import { useDispatch } from 'react-redux';
+import * as userActions from './store/user/user.actions';
+
+
 const App = () => {
+  const dispatch = useDispatch();
+  //
+  //
+  let sayEnough = true;
+
+  useEffect(() => {
+    if (sayEnough) {
+      
+      const unsubscribe = onAuthStateChangedListener((user) => {
+          if (user) {
+              createUserDocumentFromAuth(user)
+          }
+          dispatch(userActions.setCurrentUser(user));
+      });
+      sayEnough = false;
+      return unsubscribe;
+    }
+
+  }, [])
 
 
   return (
