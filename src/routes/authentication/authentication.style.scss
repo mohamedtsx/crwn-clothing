@@ -1,6 +1,12 @@
 .authentication-container {
     display: flex;
-    width: 900px;
+    max-width: 900px;
     justify-content: space-between;
     margin: 30px auto;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.authentication-container div{
+    margin: 0 auto;
 }

@@ -10,14 +10,15 @@ import logger from './middleware/logger.js';
 const middleware = [process.env.NODE_ENV !== 'production' && logger].filter(Boolean);
 
 
+
+
 const composeEnhancers = compose(applyMiddleware(...middleware));
 
-// const enhancer = applyMiddleware(logger);
 
 const persistConfig = {
     key: 'root',
     storage: storage,
-    blacklist: ['user']
+    whitelist: ['cartItems']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
