@@ -11,7 +11,7 @@ export const fetchCategoriesSuccess = (categories) =>
 export const fetchCategoriesFailed = (error) =>
     createAction(categoriesTypes.FETCH_CATEGORIES_FAILED,error);
         
-export const fetchCategoriesAsync = async (dispatch) => {
+export const fetchCategoriesAsync = () => async (dispatch) => {
     dispatch(fetchCategoriesStart());
     try {
         const categoriesMap = await getCategoriesAndDocuments();

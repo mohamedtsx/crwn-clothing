@@ -5,9 +5,13 @@ import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import logger from './middleware/logger.js';
+import thunk from 'redux-thunk';
 
 
-const middleware = [process.env.NODE_ENV !== 'production' && logger].filter(Boolean);
+const middleware = [
+    process.env.NODE_ENV !== 'production' &&
+    logger, thunk
+].filter(Boolean);
 
 
 

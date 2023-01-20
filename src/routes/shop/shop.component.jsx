@@ -12,9 +12,8 @@ const Shop = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchCategoriesAsync(dispatch);
-  }, []);
-
+    dispatch(fetchCategoriesAsync());
+  }, [dispatch]);
 
   return(
     <Routes>
@@ -25,11 +24,3 @@ const Shop = () => {
 }
 
 export default Shop;
-
-/* 
-Asynchronous Issue:
-  - start 
-  - categoryPreview 
-  - dispatch
-  - categoryPreview 
-*/
