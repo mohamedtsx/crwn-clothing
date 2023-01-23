@@ -34,3 +34,8 @@ export const LogoContainer = styled(Link)`
   align-content: center;
   justify-content: center
 `
+
+export const SignInNav = styled.span`
+  word-spacing: -5px;
+  cursor: pointer;
+`
