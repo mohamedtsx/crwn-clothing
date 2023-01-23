@@ -3,6 +3,8 @@ import FormInput from '../form-input/form-input.component';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 import { createAuthUserFromEmailAndPassword } from '../../utils/firebase/firebase.utils';
 import { useState } from 'react';
+import { signUpStart } from '../../store/user/user.actions';
+import { useDispatch } from 'react-redux';
 
 
 const defaultFormFields = {
@@ -16,15 +18,15 @@ const SignUp = () => {
     
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {name, email, password, confirmPassword} = formFields;
+    const dispatch = useDispatch();
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
     }
 
 
-    const handelSubmit = async (e) => {
+    const handelSubmit = (e) => {
         e.preventDefault();
-
 
         if (password !== confirmPassword) {
             alert('both password not the same');
@@ -32,7 +34,7 @@ const SignUp = () => {
         };
 
         try {
-            await createAuthUserFromEmailAndPassword(email, password);
+            dispatch(signUpStart(email,password,name));
             resetFormFields();
         } catch(error) {
             alert(error.code)
