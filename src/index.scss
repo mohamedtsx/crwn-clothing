@@ -32,3 +32,9 @@ a {
     padding: 2rem 4vw;
   }
 }
+
+@media screen and (max-width: 45em) {
+  html {
+    font-size: 56%;
+  }
+}
