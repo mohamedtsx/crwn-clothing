@@ -14,9 +14,9 @@ const getButton = (buttonType = 'base') =>
         [BUTTON_TYPE_CLASSES.inverted]: InvertedBtn
     }[buttonType]);
 
-const Button = ({buttonType, children, ...otherPorps}) => {
-    const CustomeButton = getButton(buttonType);
-    return <CustomeButton {...otherPorps}>{children}</CustomeButton>
+const Button = ({buttonType, children, ...otherProps}) => {
+    const CustomButton = getButton(buttonType);
+    return <CustomButton {...otherProps}>{children}</CustomButton>
 }
 
 export default Button;
