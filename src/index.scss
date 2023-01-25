@@ -1,9 +1,16 @@
+html {
+  width: 100%;
+  overflow-x: none;
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
-  padding: 20px 2vw;
+  padding: 2rem 2vw;
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem;
 }
 
 code {
@@ -20,8 +27,14 @@ a {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 75em) {
   body {
-    padding: 20px 4vw;
+    padding: 2rem 4vw;
+  }
+}
+
+@media screen and (max-width: 45em) {
+  html {
+    font-size: 56%;
   }
 }

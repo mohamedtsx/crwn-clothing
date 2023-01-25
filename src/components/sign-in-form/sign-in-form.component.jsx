@@ -1,8 +1,10 @@
 import './sign-in-form.style.scss'
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
-import { signInAuthWithEmailAndPassword, signInWithGooglePopup} from '../../utils/firebase/firebase';
+
 import { useState } from 'react';
+import { emailSignInStart, googleSignInStart } from '../../store/user/user.actions';
+import { useDispatch } from 'react-redux';
 
 
 const defaultFormFields = {
@@ -11,23 +13,20 @@ const defaultFormFields = {
 }
 
 const SignIn = () => {
-
-
-
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email, password} = formFields;
-
+    const dispatch = useDispatch()
 
     const handelChange = (e) => {
         const {name, value} = e.target;
         setFormFields({...formFields, [name]: value})
     }
 
-    const handelSumit = async (e) => {
+    const handelSubmit = (e) => {
         e.preventDefault()
         
         try {
-            await signInAuthWithEmailAndPassword(email, password);
+            dispatch(emailSignInStart(email,password));
             resetFormFields();
         } catch(error) {
             alert(error.code);
@@ -38,8 +37,8 @@ const SignIn = () => {
         setFormFields(defaultFormFields);
     }
 
-    const googleSignIn = async () => {
-        await signInWithGooglePopup();
+    const googleSignIn = () => {
+        dispatch(googleSignInStart());
     }
 
 
@@ -47,7 +46,7 @@ const SignIn = () => {
         <div className='sign-up-container'>
             <h2>Already have an account ?</h2>
             <span>Sign in with your email and password</span>
-            <form onSubmit={handelSumit}>
+            <form onSubmit={handelSubmit}>
                 <FormInput labelText='email' type='email' name='email' value={email} onChange={handelChange}/>
                 <FormInput labelText='password' type='password' name='password' value={password} onChange={handelChange}/>
                 <div className='buttons-container'>

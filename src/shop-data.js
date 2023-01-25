@@ -1,4 +1,4 @@
-import { addCollectionAndDocuments } from "./utils/firebase/firebase";
+import { addCollectionAndDocuments } from "./utils/firebase/firebase.utils";
 
 const SHOP_DATA = [
   {
