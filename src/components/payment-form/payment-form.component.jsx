@@ -22,7 +22,7 @@ const PaymentForm  = () => {
              'Content-Type':'application/json'
            },
            body: JSON.stringify({ amount: 1000 })
-        }).response(response => response.json());
+        }).then(response => response.json());
 
         const { paymentIntent: { client_secret } } = await response;
 
