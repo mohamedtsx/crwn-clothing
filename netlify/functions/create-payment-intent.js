@@ -13,14 +13,14 @@ exports.handler = async (event) => {
         });
         
         return {
-            status: 200,
+            statusCode: 200,
             body: JSON.stringify({paymentIntent})
         }
     } catch (error) {
         console.log(error);
 
         return {
-            status: 400,
+            statusCode: 400,
             body: JSON.stringify({error})
         }
     }

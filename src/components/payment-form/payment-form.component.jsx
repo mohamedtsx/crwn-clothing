@@ -21,10 +21,11 @@ const PaymentForm  = () => {
            headers: {
              'Content-Type':'application/json'
            },
-           body: JSON.stringify({ amount: 10000 })
-        }).then(response => response.json());
+           body: JSON.stringify({ amount: 1000 })
+        });
+        const data = await response.json();
 
-        console.log(response);
+        console.log(data);
     }
 
     return(
@@ -32,7 +33,7 @@ const PaymentForm  = () => {
             <div className='payment_form-container'>
                 <CardElement/>
             </div>
-            <Button buttonType={BUTTON_TYPE_CLASSES.inverted}>Pay Now</Button>
+            <Button type='submit' buttonType={BUTTON_TYPE_CLASSES.inverted}>Pay Now</Button>
         </form>
     )
 }
