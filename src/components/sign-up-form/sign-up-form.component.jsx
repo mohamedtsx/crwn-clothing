@@ -1,7 +1,6 @@
 import './sign-up-form.style.scss';
 import FormInput from '../form-input/form-input.component';
-import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
-import { createAuthUserFromEmailAndPassword } from '../../utils/firebase/firebase.utils';
+import Button from '../button/button.component';
 import { useState } from 'react';
 import { signUpStart } from '../../store/user/user.actions';
 import { useDispatch } from 'react-redux';
