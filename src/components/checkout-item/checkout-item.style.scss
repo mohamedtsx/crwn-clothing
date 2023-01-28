@@ -23,6 +23,12 @@
         width: 23%;
     }
 
+    .name {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
     .quantity {
         display: flex;
 

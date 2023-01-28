@@ -22,6 +22,10 @@ export const ItemDetails = styled.div`
 
   .name {
     font-size: 1.6rem;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .empty-message {
