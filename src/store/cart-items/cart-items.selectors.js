@@ -1,4 +1,16 @@
-export const selectCartItems = (state) => state.cartItems.cartItems;
+import { createSelector } from "reselect";
 
-// the first cartItems come from root reducer key and the second
-// comes from the cartItemReducer {...state, cartItems: payload}
+export const selectCarItemReducer = (state) => state.cartItems;
+
+export const selectCartItems = createSelector(
+    [selectCarItemReducer], 
+    (cart) => cart.cartItems
+);
+
+export const selectTotalPrice = createSelector(
+    [selectCartItems], 
+    (cartItems) => cartItems.reduce((acc, current) => {
+        const {price, quantity} = current;
+        return acc + price*quantity;
+    },0)
+);

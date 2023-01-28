@@ -1,7 +1,7 @@
 import { CartIconContainer, ShoppingIcon, ItemCount } from './cart-icon.style';
 
 import { useSelector } from 'react-redux';
-import * as cartItemsSelectores from '../../store/cart-items/cart-items.selectors';
+import * as cartItemsSelectors from '../../store/cart-items/cart-items.selectors';
 
 
 const CartIcon = (props) => {
@@ -11,7 +11,7 @@ const CartIcon = (props) => {
     const handelCartIcon = () => setIsCartOpen(isCartOpen ? false : true);
 
 
-    const cartItems = useSelector(cartItemsSelectores.selectCartItems);
+    const cartItems = useSelector(cartItemsSelectors.selectCartItems);
 
     const mount = cartItems.reduce((acc, current) => acc + current.quantity, 0);
 

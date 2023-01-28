@@ -6,12 +6,8 @@ import PaymentForm from '../../components/payment-form/payment-form.component';
 
 const Checkout = () => {
 
-    const cartItems = useSelector(cartItemsSelectors.selectCartItems)
-
-    const totalPrice = cartItems.reduce((acc, current) => {
-        const {price, quantity} = current;
-        return acc + price*quantity;
-    },0) ;
+    const cartItems = useSelector(cartItemsSelectors.selectCartItems);
+    const totalPrice = useSelector(cartItemsSelectors.selectTotalPrice);
 
     return (
         <div className='checkout-container'>
