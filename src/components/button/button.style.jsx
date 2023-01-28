@@ -44,8 +44,5 @@ export const InvertedBtn = styled(BaseBtn)`
   &:hover {
     background-color: black;
     color: white;
-    ${'' /* border: none; */}
   }
 `
-
-// I want all buttons to contine the base btn style !

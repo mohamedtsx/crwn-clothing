@@ -9,6 +9,7 @@ import { BUTTON_TYPE_CLASSES } from '../button/button.component';
 import { selectTotalPrice } from '../../store/cart-items/cart-items.selectors';
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selectors';
+import { useState } from 'react';
 
 
 const PaymentForm  = () => {
@@ -17,11 +18,13 @@ const PaymentForm  = () => {
 
     const amount = useSelector(selectTotalPrice);
     const currentUser = useSelector(selectCurrentUser);
+    const [isLoading, setIsLoading] = useState(false);
 
     const paymentHandler = async (e) => {
         e.preventDefault();
 
         if(!stripe||!elements) return;
+        setIsLoading(true);
 
         const response = await fetch('/.netlify/functions/create-payment-intent',{
            method: 'post',
@@ -42,6 +45,8 @@ const PaymentForm  = () => {
             }
         });
 
+        setIsLoading(false);
+
         if(paymentResult.error) {
             alert(paymentResult.error);
         } else {
@@ -56,7 +61,11 @@ const PaymentForm  = () => {
             <div className='payment_form-container'>
                 <CardElement/>
             </div>
-            <Button type='submit' buttonType={BUTTON_TYPE_CLASSES.inverted}>Pay Now</Button>
+            <Button 
+                type='submit' 
+                buttonType={BUTTON_TYPE_CLASSES.inverted} 
+                isLoading={isLoading}
+            >Pay Now</Button>
         </form>
     )
 }

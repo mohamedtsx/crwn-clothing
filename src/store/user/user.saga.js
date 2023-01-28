@@ -1,6 +1,6 @@
 import { takeLatest, put, all,call } from 'redux-saga/effects';
 import { USER_ACTION_TYPES } from './user.types';
-import { signInSuccess, signInFailed, signOutAction, signUpSuccess, signUpFailed, signOutFailed, signOutSuccess} from './user.actions';
+import { signInSuccess, signInFailed, signUpSuccess, signUpFailed, signOutFailed, signOutSuccess} from './user.actions';
 
 import { 
     createAuthUserFromEmailAndPassword,

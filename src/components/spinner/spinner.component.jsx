@@ -1,9 +1,9 @@
 import './spinner.style.css';
 
-const Spinner = () => {
+const Spinner = ({...props}) => {
     return(
-        <div className="spinner-overlay">
-            <div className="spinner-container"></div>
+        <div className="spinner-overlay" {...props}>
+            <div className="spinner-container" {...props}></div>
         </div>
     )
 }
