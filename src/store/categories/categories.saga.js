@@ -1,5 +1,5 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
-import { categoriesTypes } from './categories.types';
+import { CATEGORIES_ACTION_TYPES } from './categories.types';
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 import { fetchCategoriesSuccess } from "./categories.actions";
 import { fetchCategoriesFailed } from "./categories.actions";
@@ -16,7 +16,7 @@ export function* fetchCategoriesAsync(){
 
 function* onFetchCategory() {
     yield takeLatest(
-        categoriesTypes.FETCH_CATEGORIES_START,
+        CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START,
         fetchCategoriesAsync
     )
 }
