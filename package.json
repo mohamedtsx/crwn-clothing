@@ -8,6 +8,10 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.10",
+    "@types/react": "^18.0.30",
+    "@types/react-dom": "^18.0.11",
     "dotenv": "^16.0.3",
     "firebase": "^9.9.4",
     "react": "^18.2.0",
@@ -24,6 +28,7 @@
     "saas": "^1.0.0",
     "stripe": "^11.7.0",
     "styled-components": "^5.3.5",
+    "typescript": "^5.0.2",
     "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4"
   },
