@@ -2,7 +2,7 @@ import { CATEGORIES_ACTION_TYPES, Category } from './categories.types';
 import { CategoryAction } from './categories.actions';
 
 
-type CategoriesState = {
+export type CategoriesState = {
     readonly categories: Category[];
     readonly isLoading: boolean;
     readonly error: Error | null;
@@ -18,7 +18,7 @@ const CATEGORIES_INTITULE_STATE: CategoriesState = {
 const categoriesReducer = (
     state = CATEGORIES_INTITULE_STATE, 
     action = {} as CategoryAction
-    ) => {
+    ): CategoriesState => {
     switch(action.type) {
         case CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START:
             return {...state, isLoading: true};
