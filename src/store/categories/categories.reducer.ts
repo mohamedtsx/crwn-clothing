@@ -1,14 +1,24 @@
-import { CATEGORIES_ACTION_TYPES } from './categories.types';
+import { CATEGORIES_ACTION_TYPES, Category } from './categories.types';
+import { CategoryAction } from './categories.actions';
 
 
+type CategoriesState = {
+    readonly categories: Category[];
+    readonly isLoading: boolean;
+    readonly error: Error | null;
+} 
 
-const CATEGORIES_INTITULE_STATE = {
+const CATEGORIES_INTITULE_STATE: CategoriesState = {
     categories: [],
     isLoading: false,
     error: null
-}
+}  // this type for the state parameter
 
-const categoriesReducer = (state = CATEGORIES_INTITULE_STATE, action) => {
+
+const categoriesReducer = (
+    state = CATEGORIES_INTITULE_STATE, 
+    action = {} as CategoryAction
+    ) => {
     switch(action.type) {
         case CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START:
             return {...state, isLoading: true};
