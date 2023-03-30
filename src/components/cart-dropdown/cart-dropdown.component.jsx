@@ -8,8 +8,8 @@ import * as cartItemsSelectors from '../../store/cart/cart.selectors';
 import { useDispatch } from 'react-redux';
 import { setIsCartOpen } from '../../store/cart/cart.actions.js';
 import { useRef } from 'react';
-import { isCartOpen } from '../../store/cart/cart.types.js';
-// import setIsCard
+
+
 
 const CartDropdown = () => {
     const dispatch = useDispatch();
