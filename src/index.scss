@@ -2,6 +2,7 @@ html {
   width: 100%;
   overflow-x: none;
   font-size: 62.5%;
+  min-height: 100vh;
 }
 
 body {
@@ -11,6 +12,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
+  max-width: 120rem;
+  margin: auto;
 }
 
 code {

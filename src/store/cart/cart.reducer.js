@@ -1,7 +1,8 @@
-import * as cartItemsTypes from './cart-items.types';
+import * as cartItemsTypes from './cart.types';
 
 const CARTITEMS_INITIAL_STATE = {
-    cartItems: []
+    cartItems: [],
+    isCartOpen: false
 }
 
 const cartItemsReducer = (state = CARTITEMS_INITIAL_STATE, action) => {
@@ -22,6 +23,8 @@ const cartItemsReducer = (state = CARTITEMS_INITIAL_STATE, action) => {
                 :{...state, cartItems: cartItems.map(el => el.id === payload.id ? {...el, quantity: ++el.quantity} : el)};
             case cartItemsTypes.INCREMENT :
                 return {...state, cartItems: cartItems.map(el => el.id === payload.id ? {...el, quantity: ++el.quantity} : el)};
+            case cartItemsTypes.isCartOpen:
+                return {...state, isCartOpen: !state.isCartOpen}
             default:
                 return state;
         }

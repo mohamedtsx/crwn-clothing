@@ -6,7 +6,7 @@ import { useStripe, useElements} from '@stripe/react-stripe-js';
 import Button from '../button/button.component';
 import { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
-import { selectTotalPrice } from '../../store/cart-items/cart-items.selectors';
+import { selectTotalPrice } from '../../store/cart/cart.selectors';
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selectors';
 import { useState } from 'react';

@@ -11,7 +11,7 @@ export const CartDropdownContainer = styled.div`
   background-color: white;
   top: 9rem;
   right: 4rem;
-  z-index: 5;
+  z-index: 9999;
 
   .button {
     margin-top: auto;
@@ -32,4 +32,15 @@ export const CartItems = styled.div`
   &::-webkit-scrollbar {
     width: 0;
   }
+`
+
+export const HiddenContainer = styled.div`
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #00000029;
+  
 `

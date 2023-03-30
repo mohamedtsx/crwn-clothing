@@ -2,7 +2,7 @@ import './product-card.style.scss';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 import { useDispatch } from 'react-redux';
-import * as cartItemsActions from '../../store/cart-items/cart-items.actions';
+import * as cartItemsActions from '../../store/cart/cart.actions';
 
 
 

@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 
 import userReducer from "./user/user.reducer";
 import categoriesReducer from "./categories/categories.reducer";
-import cartItemsReducer from "./cart-items/cart-items.reducer";
+import cartItemsReducer from "./cart/cart.reducer";
 
 
 const rootReducer = combineReducers({
@@ -13,4 +13,3 @@ const rootReducer = combineReducers({
 
 
 export default rootReducer;
-

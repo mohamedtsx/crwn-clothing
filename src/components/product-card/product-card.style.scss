@@ -6,6 +6,7 @@
     height: 35rem;
     align-items: center;
     position: relative;
+    transition: box-shadow 0.2s ease-in-out;
   
     img {
       width: 100%;
@@ -23,6 +24,7 @@
     }
   
     &:hover {
+      // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       img {
         opacity: 0.8;
       }

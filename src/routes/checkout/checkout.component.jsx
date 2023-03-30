@@ -1,7 +1,7 @@
 import './checkout.style.scss';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import { useSelector } from 'react-redux';
-import * as cartItemsSelectors from '../../store/cart-items/cart-items.selectors';
+import * as cartItemsSelectors from '../../store/cart/cart.selectors';
 import PaymentForm from '../../components/payment-form/payment-form.component';
 
 const Checkout = () => {

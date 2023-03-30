@@ -1,7 +1,7 @@
 import './checkout-item.style.scss';
 
 import { useDispatch } from 'react-redux';
-import * as cartItemsActions from '../../store/cart-items/cart-items.actions';
+import * as cartItemsActions from '../../store/cart/cart.actions';
 
 
 const CheckoutItem = ({item}) => {

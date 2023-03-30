@@ -8,16 +8,21 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component
 import { useDispatch, useSelector } from 'react-redux';
 import * as userSelectors from '../../store/user/user.selectors';
 import { signOutStart } from '../../store/user/user.actions.js';
+import { selectIsCartOpen } from '../../store/cart/cart.selectors.js';
+
+
 
 const Navigation = () => {
-    const [isCartOpen, setIsCartOpen] = useState(false);
     const dispatch = useDispatch();
 
     const currentUser = useSelector(userSelectors.selectCurrentUser);
+    const isCartOpen = useSelector(selectIsCartOpen)
 
     const signOutHandler = () => {
         dispatch(signOutStart());
     }
+
+
     
 
     return(
@@ -29,7 +34,7 @@ const Navigation = () => {
                     <NavLink to='shop'>SHOP</NavLink>
                     {currentUser ? (<SignInNav onClick={signOutHandler}>SIGN OUT</SignInNav>)
                     :<NavLink to='authentication'>Sign In</NavLink>}
-                    <CartIcon  isCartOpen={isCartOpen} setIsCartOpen = {setIsCartOpen}/>
+                    <CartIcon/>
                 </NavLinksContainer>
             </NavigationSt>
         
