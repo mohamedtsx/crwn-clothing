@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selectors';
 import { useDispatch } from 'react-redux';
-import { setIsCartOpen } from '../../store/cart/cart.actions.js';
+import { setIsCartOpen } from '../../store/cart/cart.actions';
 import { useRef } from 'react';
 
 
@@ -18,13 +18,11 @@ const CartDropdown = () => {
     const cartItems = useSelector(selectCartItems);
     const navigate = useNavigate();
     
-    const hideDropdownHandler = (e) => {
-        dispatch(setIsCartOpen())
-    }
+        
 
     return(
         <>
-            <HiddenContainer ref={hideRef}  onClick={hideDropdownHandler}>
+            <HiddenContainer ref={hideRef}  onClick={() => dispatch(setIsCartOpen())}>
             </HiddenContainer>
 
             <CartDropdownContainer>

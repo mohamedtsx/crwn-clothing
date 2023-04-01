@@ -8,7 +8,7 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selectors';
 import { signOutStart } from '../../store/user/user.actions.js';
-import { selectIsCartOpen } from '../../store/cart/cart.selectors.js';
+import { selectIsCartOpen } from '../../store/cart/cart.selectors';
 
 
 
