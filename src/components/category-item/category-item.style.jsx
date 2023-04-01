@@ -34,14 +34,13 @@ export const CategoryBodyContainer = styled.div`
 `
 
 export const CategoryContainer = styled.div`
-  min-width: 30%;
+  min-width: max(30%, 18rem);
   height: 24rem;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  margin: 0 0.75rem 1.5rem;
   overflow: hidden;
 
   &:hover {
@@ -58,11 +57,11 @@ export const CategoryContainer = styled.div`
   }
 
 
-  &:first-child {
+  ${'' /* &:first-child {
     margin-right: 0.75rem;
   }
 
   &:last-child {
     margin-left: 0.75rem;
-  }
+  } */}
 `

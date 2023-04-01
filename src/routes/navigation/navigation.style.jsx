@@ -21,6 +21,7 @@ export const NavLinksContainer = styled.div`
 export const NavLink = styled(Link)`
   padding: 1rem 1.5rem;
   cursor: pointer;
+  word-spacing: -5px;
 `
 export const NavLinkSpan = styled.span`
   padding: 1rem 1.5rem;

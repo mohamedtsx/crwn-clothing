@@ -2,18 +2,19 @@ import './product-card.style.scss';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 import { useDispatch } from 'react-redux';
-import * as cartItemsActions from '../../store/cart/cart.actions';
-
+import { addItemToCart } from '../../store/cart/cart.actions';
+import { useSelector } from 'react-redux';
+import { selectCartItems } from '../../store/cart/cart.selectors';
 
 
 const ProductCard = ({product}) => {
 
   const dispatch = useDispatch();
-
+  const cartItems = useSelector(selectCartItems);
   const {name, price, imageUrl} = product;
   
   const handelAddProduct = () => {
-    dispatch(cartItemsActions.addItemToCart(product));
+    dispatch(addItemToCart(cartItems, product));
   }
 
 

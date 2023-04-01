@@ -1,5 +1,4 @@
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const REMOVE = 'REMOVE';
-export const ADD = 'ADD';
-export const isCartOpen = "SET_CART_OPEN";
+export const CART_ACTION_TYPES = {
+    SET_IS_CART_OPEN: "cart/SET_IS_CART_OPEN",
+    SET_CART_ITEMS: "cart/SET_CART_ITEMS"
+} 
