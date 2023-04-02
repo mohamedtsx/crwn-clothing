@@ -47,7 +47,7 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, googleAuthProvi
 
 export const signWithGoogleRedirect = () => signInWithRedirect(auth, googleAuthProvider);
 
-type AdditionalInfo = {
+export type AdditionalInfo = {
     displayName?: string;
 }
 
@@ -59,7 +59,7 @@ export type UserData = {
 
 export const createUserDocumentFromAuth = async (
     user: User, 
-    additionalInfo: AdditionalInfo
+    additionalInfo = {} as AdditionalInfo
     ): Promise<void | QueryDocumentSnapshot<UserData>> => {
     const {displayName, email} = user;
     const createdAt = new Date()
