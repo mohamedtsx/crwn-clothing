@@ -17,6 +17,9 @@ export const Group = styled.div`
         letter-spacing: 0.3rem;
     }
 `
+type FormInputLabelProps = {
+    shrink?: boolean
+}
 
 export const FormInputLabel = styled.label`
     color: ${subColor};
@@ -28,7 +31,7 @@ export const FormInputLabel = styled.label`
     top: 1rem;
     transition: 300ms ease all;
 
-    ${({shrink}) => shrink && shrinkLabelStyle};
+    ${({shrink}: FormInputLabelProps) => shrink && shrinkLabelStyle};
 `
 
 

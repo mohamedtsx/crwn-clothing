@@ -1,10 +1,12 @@
+import { useState, FormEvent, ChangeEvent } from 'react';
+
 import './sign-in-form.style.scss'
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 import FormInput from '../form-input/form-input.component';
 
-import { useState } from 'react';
 import { emailSignInStart, googleSignInStart } from '../../store/user/user.actions';
 import { useDispatch } from 'react-redux';
+
 
 
 const defaultFormFields = {
@@ -17,19 +19,19 @@ const SignIn = () => {
     const {email, password} = formFields;
     const dispatch = useDispatch()
 
-    const handelChange = (e) => {
+    const handelChange = (e: ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;
         setFormFields({...formFields, [name]: value})
     }
 
-    const handelSubmit = (e) => {
+    const handelSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         
         try {
             dispatch(emailSignInStart(email,password));
             resetFormFields();
         } catch(error) {
-            alert(error.code);
+            console.log('user sign in failed', error);
         }
     }
 
