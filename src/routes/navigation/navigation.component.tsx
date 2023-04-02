@@ -1,7 +1,13 @@
-import { NavigationSt, NavLinksContainer, NavLink, LogoContainer, SignInNav } from './navigation.style.jsx'
-import {ReactComponent as CrwnLogo} from '../../assets/crown.svg';
+import { 
+    NavigationSt, 
+    NavLinksContainer, 
+    NavLink, 
+    LogoContainer, 
+    SignInNav 
+} from './navigation.style'
+
+import {ReactComponent as CrownLogo} from '../../assets/crown.svg';
 import { Outlet } from 'react-router-dom';
-import { Fragment, useState } from 'react';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
@@ -23,13 +29,10 @@ const Navigation = () => {
     }
 
 
-    
-
     return(
-        <Fragment>
-
+        <>
             <NavigationSt>
-                <LogoContainer to='/'><CrwnLogo className='logo'/></LogoContainer>
+                <LogoContainer to='/'><CrownLogo className='logo'/></LogoContainer>
                 <NavLinksContainer>
                     <NavLink to='shop'>SHOP</NavLink>
                     {currentUser ? (<SignInNav onClick={signOutHandler}>SIGN OUT</SignInNav>)
@@ -41,7 +44,7 @@ const Navigation = () => {
             {isCartOpen && <CartDropdown/>}
         
             <Outlet/>
-        </Fragment>
+        </>
     )
 }
 

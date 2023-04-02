@@ -1,5 +1,5 @@
 import {  FC, ButtonHTMLAttributes} from 'react';
-import { BaseBtn, GoogleSignInBtn, InvertedBtn } from './button.style.jsx';
+import { BaseBtn, GoogleSignInBtn, InvertedBtn } from './button.style';
 
 
 export enum BUTTON_TYPE_CLASSES {
