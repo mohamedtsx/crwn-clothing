@@ -31,7 +31,7 @@
     "stripe": "^11.7.0",
     "styled-components": "^5.3.5",
     "typed-redux-saga": "^1.5.0",
-    "typescript": "^5.0.2",
+    "typescript": "^3.2.1",
     "uuidv4": "^6.2.13",
     "web-vitals": "^2.1.4"
   },
