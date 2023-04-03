@@ -7,4 +7,3 @@ export const DirectoryContainer = styled.div`
     justify-content: space-between;
     gap: 1.25rem;
 `
-// routes home page to category 

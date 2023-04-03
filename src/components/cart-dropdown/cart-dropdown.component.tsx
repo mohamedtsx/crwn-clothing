@@ -1,4 +1,4 @@
-import { CartDropdownContainer, CartItems, HiddenContainer } from './cart-dropdown.style.jsx';
+import { CartDropdownContainer, CartItems, Back } from './cart-dropdown.style';
 import Button from '../button/button.component';
 import CartItem from '../cart-item/cart-item.component';
 import { useNavigate } from 'react-router-dom';
@@ -7,23 +7,21 @@ import { useSelector } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selectors';
 import { useDispatch } from 'react-redux';
 import { setIsCartOpen } from '../../store/cart/cart.actions';
-import { useRef } from 'react';
 
 
 
 const CartDropdown = () => {
     const dispatch = useDispatch();
-    const hideRef = useRef(null);
 
     const cartItems = useSelector(selectCartItems);
     const navigate = useNavigate();
     
-        
 
     return(
         <>
-            <HiddenContainer ref={hideRef}  onClick={() => dispatch(setIsCartOpen())}>
-            </HiddenContainer>
+            <Back onClick={
+                () => dispatch(setIsCartOpen())
+            }></Back>
 
             <CartDropdownContainer>
 
@@ -38,7 +36,7 @@ const CartDropdown = () => {
                 <Button type='button' className='button' onClick={() => {
                     dispatch(setIsCartOpen())
                     navigate('/checkout')
-                }}>CHECKOUT</Button>           
+                }}>CHECKOUT</Button>
             </CartDropdownContainer>
         </>
     )

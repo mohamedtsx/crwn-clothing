@@ -5,9 +5,14 @@ import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../store/cart/cart.actions';
 import { useSelector } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selectors';
+import { CategoryItem } from '../../store/categories/categories.types';
+import { FC } from 'react';
 
+type ProductCardProps = {
+  product: CategoryItem
+}
 
-const ProductCard = ({product}) => {
+const ProductCard: FC<ProductCardProps> = ({product}) => {
 
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
@@ -25,7 +30,12 @@ const ProductCard = ({product}) => {
             <span className='name'>{name}</span>
             <span className='price'>{price}</span>
         </div>
-        <Button buttonType={BUTTON_TYPE_CLASSES.inverted} type='button' onClick={handelAddProduct}>Add to card</Button>
+        
+        <Button 
+          buttonType={BUTTON_TYPE_CLASSES.inverted} 
+          type='button' 
+          onClick={handelAddProduct}
+        >Add to card</Button>
     </div>
   );
 

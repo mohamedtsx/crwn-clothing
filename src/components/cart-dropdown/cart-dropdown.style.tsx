@@ -38,7 +38,7 @@ export const CartItems = styled.div`
   }
 `
 
-export const HiddenContainer = styled.div`
+export const Back = styled.div`
   position: fixed;
   z-index: 100;
   top: 0;

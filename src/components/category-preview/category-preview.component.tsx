@@ -4,11 +4,13 @@ import ProductCard from '../product-card/product-card.component';
 import Spinner from '../spinner/spinner.component';
 
 import { useSelector } from 'react-redux';
-import { selectCategoriesIsLoading, selectCategoriesMap } from '../../store/categories/categories.selectors';
+import { 
+    selectCategoriesIsLoading, 
+    selectCategoriesMap 
+} from '../../store/categories/categories.selectors';
 
 
 const CategoryPreview = () => {
-    console.log('%c categoryPreview use selector with dispatch', 'color: gray')
 
     const categoriesMap = useSelector(selectCategoriesMap);
     const isLoading = useSelector(selectCategoriesIsLoading);

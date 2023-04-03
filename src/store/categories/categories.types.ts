@@ -7,14 +7,14 @@ export enum CATEGORIES_ACTION_TYPES {
 
 export type CategoryItem = {
     id: number;
-    imageURL: string;
+    imageUrl: string;
     name: string;
     price: number;
 }
 
 export type Category = {
     title: string;
-    imageURL: string;
+    imageUrl: string;
     items: CategoryItem;
 }
 

@@ -1,4 +1,4 @@
-import './payment-form.style.css';
+import './payment-form.style.scss';
 
 import { CardElement } from '@stripe/react-stripe-js';
 import { useStripe, useElements} from '@stripe/react-stripe-js';
