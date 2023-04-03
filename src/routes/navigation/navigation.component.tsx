@@ -17,7 +17,6 @@ import { signOutStart } from '../../store/user/user.actions';
 import { selectIsCartOpen } from '../../store/cart/cart.selectors';
 
 
-
 const Navigation = () => {
     const dispatch = useDispatch();
 

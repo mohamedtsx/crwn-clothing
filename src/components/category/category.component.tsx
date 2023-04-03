@@ -9,21 +9,33 @@ import {
     selectCategoriesIsLoading, 
     selectCategoriesMap 
 } from '../../store/categories/categories.selectors';
+import { useEffect, useState } from 'react';
 
 
+type CategoryRouteParams = {
+    category: string;
+}
 
 const Category = () => {
-    const { category } = useParams();
+    const { category } = useParams<keyof CategoryRouteParams>() as CategoryRouteParams;
 
     const categoriesMap = useSelector(selectCategoriesMap);
+    const [products, setProducts] = useState(categoriesMap[category]);
     const isLoading = useSelector(selectCategoriesIsLoading);
+
+    useEffect(() => {
+        setProducts(categoriesMap[category]);
+    }, [category, categoriesMap]);
 
 
     return(
         isLoading ? <Spinner/> : 
         <div>
             <div className='shop_category-container'>
-                {!!categoriesMap[category] && categoriesMap[category].map(el => <ProductCard product={el} key={el.id}/>)}
+                {products && products.map(
+                    el => <ProductCard product={el} key={el.id}/>
+                )}
+
             </div>
         </div>
     )
