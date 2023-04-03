@@ -8,19 +8,28 @@ import { UserProvider } from './context/users.context';
 import { CategoriesProvider } from './context/categories.context';
 import  { CartProvider } from './context/cart.context.jsx'
 
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: 'https://crwn-clothing.com/',
+  cache: new InMemoryCache()
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <UserProvider>
-          <CategoriesProvider>
-            <CartProvider>
-              <App />
-            </CartProvider>
-          </CategoriesProvider>
-      </UserProvider>
-    </React.StrictMode>
-  </BrowserRouter>
+  <ApolloProvider client={client}>
+    <BrowserRouter>
+      <React.StrictMode>
+        <UserProvider>
+            <CategoriesProvider>
+              <CartProvider>
+                <App />
+              </CartProvider>
+            </CategoriesProvider>
+        </UserProvider>
+      </React.StrictMode>
+    </BrowserRouter>
+  </ApolloProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
