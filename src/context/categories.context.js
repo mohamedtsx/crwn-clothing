@@ -41,7 +41,7 @@ export const CategoriesProvider = ({children}) => {
                 const {title, items} = collection;
                 acc[title.toLowerCase()] = items;
                 return acc;
-            }, {})
+            }, {});
             setCategoriesMap(collectionMap);
         }
     }, [data]);
