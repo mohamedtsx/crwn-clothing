@@ -1,0 +1,2 @@
+.spinner-overlay{align-items:center;display:flex;height:60vh;justify-content:center;width:100%}.spinner-container{-webkit-animation:spin 1s ease-in-out infinite;animation:spin 1s ease-in-out infinite;border:.3rem solid hsla(0,0%,76%,.6);border-radius:50%;border-top-color:#636767;display:inline-block;height:5rem;width:5rem}@keyframes spin{to{-webkit-transform:rotate(1turn)}}@-webkit-keyframes spin{to{-webkit-transform:rotate(1turn)}}
+/*# sourceMappingURL=751.743d7ae0.chunk.css.map*/
