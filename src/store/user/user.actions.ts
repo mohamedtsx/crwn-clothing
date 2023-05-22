@@ -28,7 +28,7 @@ export type SignUpFailed = ActionWithPayload<USER_ACTION_TYPES.SIGN_UP_FAILED, E
 export type SignOutStart = Action<USER_ACTION_TYPES.SIGN_OUT_START>;
 export type SignOutSuccess = Action<USER_ACTION_TYPES.SIGN_OUT_SUCCESS>;
 export type SignOutFailed = ActionWithPayload<USER_ACTION_TYPES.SIGN_OUT_FAILED, Error>;
-
+export type ClearAuthError = Action<USER_ACTION_TYPES.CLEAR_AUTH_ERROR>;
 
 
 
@@ -91,4 +91,9 @@ export const signOutSuccess = withMatcher(
 export const signOutFailed = withMatcher(
     (error: Error): SignOutFailed => 
     createAction(USER_ACTION_TYPES.SIGN_OUT_FAILED,error)
+);
+
+export const clearAuthError = withMatcher(
+    (): ClearAuthError => 
+    createAction(USER_ACTION_TYPES.CLEAR_AUTH_ERROR)
 );

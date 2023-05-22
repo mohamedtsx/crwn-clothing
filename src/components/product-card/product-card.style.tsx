@@ -23,7 +23,8 @@ export const ProductCardContainer = styled.div`
 
 export const CardImage = styled.img`
   width: 100%;
-  height: 95%;
+  height: 100%;
+  overflow: hidden;
   object-fit: cover;
   margin-bottom: 0.5rem;
 `;
@@ -39,7 +40,13 @@ export const CardButton = styled(Button)`
 export const Caption = styled.div`
     ${({theme}) => theme.mixes.flexBetween}
     width: 100%;
-    height: 5%;
-    font-size: var(--fz-lg);  
+    font-size: var(--fz-lg);
     padding-right: 1rem;
+
+    .name {
+      max-width: 90%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 `;

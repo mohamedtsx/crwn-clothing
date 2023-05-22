@@ -16,9 +16,13 @@ export const CategoryItems = styled.div`
 export const CategoryHeader = styled.h2`
     cursor: pointer;
     display: inline-block;
-    padding: 0 1.5rem 0.5rem;
+    color: var(--title);
+    text-transform: uppercase;
+    letter-spacing: min(12px, 4vw);
+    font-size: var(--fz-xl);
+
 
     &:hover {
-        outline: 1px solid grey;
+        /* outline: 1px solid grey; */
     }
 `;

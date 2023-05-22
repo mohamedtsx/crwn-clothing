@@ -7,11 +7,16 @@ import { useDispatch } from 'react-redux';
 import { fetchCategoriesStart } from '../../store/categories/categories.actions';
 
 
+let rock = true;
+
 const Shop = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCategoriesStart());
+    if(rock) {
+      dispatch(fetchCategoriesStart());
+    }
+    rock = false;
   }, [dispatch]);
 
   return(

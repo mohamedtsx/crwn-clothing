@@ -68,11 +68,29 @@ const SignIn = () => {
             <h2>Already have an account ?</h2>
             <span>Sign in with your email and password</span>
             <form onSubmit={handelSubmit}>
-                <FormInput labelText='email' type='email' name='email' value={email} onChange={handelChange}/>
-                <FormInput labelText='password' type='password' name='password' value={password} onChange={handelChange}/>
+                <FormInput 
+                    labelText='email' 
+                    type='email' 
+                    name='email' 
+                    value={email} 
+                    onChange={handelChange} 
+                    required
+                />
+                <FormInput 
+                    labelText='password' 
+                    type='password' 
+                    name='password' 
+                    value={password} 
+                    onChange={handelChange} 
+                    required
+                />
                 <StyledButtons>
                     <Button type='submit'>Sign in</Button>
-                    <Button buttonType={BUTTON_TYPE_CLASSES.google} type='button' onClick={googleSignIn}>Google sign in</Button>
+                    <Button 
+                        buttonType={BUTTON_TYPE_CLASSES.google} 
+                        type='button' 
+                        onClick={googleSignIn}
+                    >Google sign in</Button>
                 </StyledButtons>
             </form>
         </StyledSignUp>

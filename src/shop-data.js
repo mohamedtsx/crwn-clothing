@@ -131,7 +131,7 @@ const SHOP_DATA = [
       {
         id: 20,
         name: 'Grey Jean Jacket',
-        imageUrl: 'https://i.ibb.co/4j6qNws/8.png',
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn7dWcWJ4DJHMHAb-kuTgVIOrVcmVugDzd6g&usqp=CAU',
         price: 90,
       },
       {
@@ -149,48 +149,48 @@ const SHOP_DATA = [
     ],
   },
   {
-    title: 'Womens',
+    title: 'kids',
     items: [
       {
         id: 23,
         name: 'Blue Tanktop',
-        imageUrl: 'https://i.ibb.co/d61g4jq/1.png',
+        imageUrl: 'https://www.stylesgap.com/wp-content/uploads/2022/09/Online-Shopping-For-Kids-Wear-in-Pakistan-A-Complete-Guide-22-300x450.jpg',
         price: 25,
       },
       {
         id: 24,
         name: 'Floral Blouse',
-        imageUrl: 'https://i.ibb.co/hfrhLP1/2.png',
+        imageUrl: 'https://image.made-in-china.com/43f34j00MYPfvRGBgLoA/Boys-Shirts-Baby-Boy-Clothes-Kids-Children-Clothing-Summer.jpg',
         price: 20,
       },
       {
         id: 25,
         name: 'Floral Dress',
-        imageUrl: 'https://i.ibb.co/r20QzDv/3.png',
+        imageUrl: 'https://cdn.shopify.com/s/files/1/0030/2815/6475/products/0001305054627458_M_1024x.jpg?v=1676785172',
         price: 80,
       },
       {
         id: 26,
         name: 'Red Dots Dress',
-        imageUrl: 'https://i.ibb.co/L80JjVn/4.png',
+        imageUrl: 'https://i.pinimg.com/736x/c7/4a/08/c74a08834b0a3da462aae698f35865b9--fall-winter-fashion-catalogue.jpg',
         price: 80,
       },
       {
         id: 27,
         name: 'Striped Sweater',
-        imageUrl: 'https://i.ibb.co/LvrYjng/5.png',
+        imageUrl: 'https://i.pinimg.com/originals/df/49/04/df4904c52e6658ac20cb6e37c04f9c04.jpg',
         price: 45,
       },
       {
         id: 28,
         name: 'Yellow Track Suit',
-        imageUrl: 'https://i.ibb.co/tKNmRXP/6.png',
+        imageUrl: 'https://www.stylesgap.com/wp-content/uploads/2014/07/Latest-Kids-Dresses-Alkaram-Kids-Collection-for-Little-Boys-Girls-7.jpg',
         price: 135,
       },
       {
         id: 29,
         name: 'White Blouse',
-        imageUrl: 'https://i.ibb.co/Y8fpzwk/7.png',
+        imageUrl: 'https://www.stylesgap.com/wp-content/uploads/2014/07/Latest-Kids-Dresses-Alkaram-Kids-Collection-for-Little-Boys-Girls-25.jpg',
         price: 20,
       },
     ],
@@ -238,5 +238,5 @@ const SHOP_DATA = [
   },
 ];
 
-
+// addCollectionAndDocuments('categories', SHOP_DATA);
 export default SHOP_DATA;

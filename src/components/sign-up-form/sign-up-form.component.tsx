@@ -58,10 +58,38 @@ const SignUp = () => {
             <h2>Don't have an account ?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handelSubmit}>
-                <FormInput labelText='name' type='text' name='name' value={name} onChange={handelChange}/>
-                <FormInput labelText='email' type='email' name='email' value={email} onChange={handelChange}/>
-                <FormInput labelText='password' type='password' name='password' value={password} onChange={handelChange}/>
-                <FormInput labelText='confirm password' type='password' name='confirmPassword' value={confirmPassword} onChange={handelChange}/>
+                <FormInput 
+                    labelText='name' 
+                    type='text' 
+                    name='name' 
+                    value={name} 
+                    onChange={handelChange} 
+                    required
+                />
+                <FormInput 
+                    labelText='email' 
+                    type='email' 
+                    name='email' 
+                    value={email} 
+                    onChange={handelChange} 
+                    required
+                />
+                <FormInput 
+                    labelText='password' 
+                    type='password' 
+                    name='password' 
+                    value={password} 
+                    onChange={handelChange} 
+                    required
+                />
+                <FormInput 
+                    labelText='confirm password' 
+                    type='password' 
+                    name='confirmPassword' 
+                    value={confirmPassword} 
+                    onChange={handelChange} 
+                    required
+                />
                 <Button type='submit'>Sign up</Button>
             </form>
         </StyledSignUp>

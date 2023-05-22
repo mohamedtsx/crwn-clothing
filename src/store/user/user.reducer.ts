@@ -6,7 +6,8 @@ import {
     signOutSuccess,
     signInFailed,
     signUpFailed,
-    signOutFailed
+    signOutFailed,
+    clearAuthError
 } from './user.actions';
 
 export type UserState = {
@@ -38,6 +39,9 @@ const userReducer = (
         signUpFailed.match(action)
     ) {
         return {...state, error: action.payload}
+    }
+    if(clearAuthError.match(action)) {
+        return {...state, error: null}
     }
     return state;
 }

@@ -26,7 +26,6 @@ const CategoryPreview = () => {
         {
             Object.keys(categoriesMap).map(title => {
                 const categoryShortMap = categoriesMap[title].filter(( _, index) => index < 4);
-                
                 return(
                     <div key={title} >
                         <Styled.CategoryHeader onClick={() => navigate(`${title}`)}>{title}</Styled.CategoryHeader>

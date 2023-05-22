@@ -8,26 +8,49 @@ import { selectTotalPrice } from '../../store/cart/cart.selectors';
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selectors';
 import { useState, FormEvent } from 'react';
+
 import styled from 'styled-components';
 
 
 
 
 const StyledPaymentForm = styled.form`
-    ${({theme}) => theme.mixes.flexBetween}
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: space-between;
     width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.15);
+
+    &:hover {
+        box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.2);    
+        transition: all 0.3s ease;
+    }
 `;
 
 const StyledCardContainer = styled.div`
     flex-grow: 1;
-    height: 5rem;
     border: 1px solid gray;
     margin: 1rem 0;
     padding: 1rem;
     display: inline-block;
+    grid-column: 1/3;
+    background-color: #fff;
 `;
 
+const PayButton = styled(Button)`
+    width: 8rem;
+    align-self: end;
+`
+
+const StyledTotalPrice = styled.span`
+    font-size: var(--fz-heading);   
+    margin: auto 0;
+    @media only screen and (max-width: 45em) {
+        font-size: var(--fz-xl);
+    }
+`;
 
 
 const PaymentForm  = () => {
@@ -82,11 +105,12 @@ const PaymentForm  = () => {
             <StyledCardContainer>
                 <CardElement/>
             </StyledCardContainer>
-            <Button 
-                type='submit' 
+            <StyledTotalPrice>Total: ${amount}</StyledTotalPrice>
+            <PayButton 
+                type='submit'
                 buttonType={BUTTON_TYPE_CLASSES.inverted} 
                 isLoading={isLoading}
-            >Pay Now</Button>
+            >Pay Now</PayButton>
         </StyledPaymentForm>
     )
 }

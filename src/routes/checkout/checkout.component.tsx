@@ -7,27 +7,18 @@ import PaymentForm from '../../components/payment-form/payment-form.component';
 const Checkout = () => {
 
     const cartItems = useSelector(selectCartItems);
-    const totalPrice = useSelector(selectTotalPrice);
 
     return (
         <Styled.Checkout>
-
-            <header>
-                <Styled.MetaData>
-                    <li>Product</li>
-                    <li>Description</li>
-                    <li>Quantity</li>
-                    <li>Price</li>
-                    <li>Remove</li>
-                </Styled.MetaData>
-            </header>
+            <Styled.CheckoutHeader>checkout</Styled.CheckoutHeader>
         
             <div className='items-container'>
                 {cartItems.map(el => <CheckoutItem item= {el} key={el.id}/>)}
-                <Styled.TotalPrice>Total price ${totalPrice}</Styled.TotalPrice>
             </div>
             <PaymentForm/>
         </Styled.Checkout>
+
+        
     )
 }
 

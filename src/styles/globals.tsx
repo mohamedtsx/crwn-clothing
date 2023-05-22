@@ -60,6 +60,9 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    &:active, &:visited {
+      color: inherit;
+    }
   }
   
 `;

@@ -1,5 +1,5 @@
 import * as Styled from './product-card.style';
-import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
+import { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../store/cart/cart.actions';
