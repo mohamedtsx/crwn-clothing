@@ -1,10 +1,4 @@
-import { 
-    NavigationSt, 
-    NavLinksContainer, 
-    NavLink, 
-    LogoContainer, 
-    SignInNav 
-} from './navigation.style'
+import * as Styled from './navigation.style';
 
 import {ReactComponent as CrownLogo} from '../../assets/crown.svg';
 import { Outlet } from 'react-router-dom';
@@ -30,15 +24,20 @@ const Navigation = () => {
 
     return(
         <>
-            <NavigationSt>
-                <LogoContainer to='/'><CrownLogo className='logo'/></LogoContainer>
-                <NavLinksContainer>
-                    <NavLink to='shop'>SHOP</NavLink>
-                    {currentUser ? (<SignInNav onClick={signOutHandler}>SIGN OUT</SignInNav>)
-                    :<NavLink to='authentication'>Sign In</NavLink>}
+            <Styled.Navigation>
+                <Styled.LogoContainer to='/'>
+                    <CrownLogo className='logo'/>
+                </Styled.LogoContainer>
+                <Styled.NavLinksContainer>
+                    <Styled.NavLink to='shop'>SHOP</Styled.NavLink>
+                    { 
+                        currentUser ? 
+                        (<Styled.SignInNav onClick={signOutHandler}>SIGN OUT</Styled.SignInNav>)
+                        :<Styled.NavLink to='authentication'>Sign In</Styled.NavLink>
+                    }
                     <CartIcon/>
-                </NavLinksContainer>
-            </NavigationSt>
+                </Styled.NavLinksContainer>
+            </Styled.Navigation>
         
             {isCartOpen && <CartDropdown/>}
         

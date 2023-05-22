@@ -1,23 +1,14 @@
-.checkout-item-container {
-    width: 100%;
-    
-    display: flex;
-    align-items: center;
+import styled from "styled-components";
 
+
+export const CheckoutItemContainer = styled.div`
+    ${({theme}) => theme.mixes.flexCenter};
     min-height: 10rem;
-    border-bottom: 1px solid darkgrey;
+    border-bottom: 1px solid var(--darkgrey);
     padding: 1.5rem 0;
-    font-size: 2rem;
+    font-size: var(--fz-xl);
+    width: 100%;
 
-    .image-container {
-        width: 23%;
-        padding-right: 1.5rem;
-        
-        img {
-            width: 100%;
-            height: 100%;
-        }
-    }
 
     .name, .quantity, .price {
         width: 23%;
@@ -49,5 +40,14 @@
         font-size: 1.8rem;
         cursor: pointer;
     }
-}
+`;
 
+export const ImageContainer = styled.div`
+    width: 23%;
+    padding-right: 1.5rem;
+    
+    img {
+        width: 100%;
+        height: 100%;
+    }
+`;

@@ -28,12 +28,13 @@ export const CategoryBodyContainer = styled.div`
     font-weight: bold;
     margin: 0 0.6rem 0;
     font-size: 2.2rem;
-    color: #4a4a4a;
+    color: var(--title);
   }
 
   p {
     font-weight: lighter;
     font-size: 1.6rem;
+    color: var(--text);
   }
 `
 
@@ -60,12 +61,4 @@ export const CategoryContainer = styled.div`
     }
   }
 
-
-  ${'' /* &:first-child {
-    margin-right: 0.75rem;
-  }
-
-  &:last-child {
-    margin-left: 0.75rem;
-  } */}
 `

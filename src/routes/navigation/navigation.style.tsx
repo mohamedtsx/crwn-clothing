@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const NavigationSt = styled.div`
+export const Navigation = styled.div`
   height: 7rem;
   width: 100%;
   display: flex;
@@ -34,7 +34,7 @@ export const LogoContainer = styled(Link)`
 
   display: grid;
   align-content: center;
-  justify-content: center
+  justify-content: center;
 `
 
 export const SignInNav = styled.span`

@@ -15,7 +15,7 @@ const CategoryItem: FC<CategoryItemProps> = ({item}) => {
 
     return(
       <CategoryContainer onClick={() => navigate(route)}>
-        <BackgroundImage imageUrl={imageUrl}></BackgroundImage>
+        <BackgroundImage imageUrl={imageUrl}/>
         <CategoryBodyContainer>
           <h2>{title}</h2>
           <p>Shop Now</p>

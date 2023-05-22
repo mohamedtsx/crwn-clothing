@@ -1,6 +1,14 @@
-import { DirectoryContainer } from './directory.style'
 import CategoryItem from '../category-item/category-item.component';
 import { uuidv4 } from '@firebase/util';
+import styled from 'styled-components';
+
+const StyledDirectory = styled.section`
+  ${({theme}) => theme.mixes.flexBetween}
+  flex-wrap: wrap;
+  gap: 1.25rem;
+`;
+
+
 
 export type DirectoryCategory = {
   id: number;
@@ -8,6 +16,8 @@ export type DirectoryCategory = {
   imageUrl: string;
   route: string;
 }
+
+
 
 const categories: DirectoryCategory[] =   [
   {
@@ -44,11 +54,11 @@ const categories: DirectoryCategory[] =   [
 
 const Directory = () => {
     return(
-      <DirectoryContainer>
+      <StyledDirectory>
         {categories.map(category => (
           <CategoryItem key={uuidv4()} item={category}/>
         ))}
-      </DirectoryContainer>
+      </StyledDirectory>
     )
 }
 

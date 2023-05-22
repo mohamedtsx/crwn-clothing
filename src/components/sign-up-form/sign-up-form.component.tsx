@@ -1,4 +1,3 @@
-import './sign-up-form.style.scss';
 import { useState, FormEvent, ChangeEvent } from 'react';
 import { AuthError, AuthErrorCodes } from 'firebase/auth';
 
@@ -6,6 +5,8 @@ import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 import { signUpStart } from '../../store/user/user.actions';
 import { useDispatch } from 'react-redux';
+
+import { StyledSignUp } from '../sign-in-form/sign-in-form.component';
 
 
 const defaultFormFields = {
@@ -53,7 +54,7 @@ const SignUp = () => {
 
     
     return(
-        <div className='sign-up-container'>
+        <StyledSignUp>
             <h2>Don't have an account ?</h2>
             <span>Sign up with your email and password</span>
             <form onSubmit={handelSubmit}>
@@ -63,7 +64,7 @@ const SignUp = () => {
                 <FormInput labelText='confirm password' type='password' name='confirmPassword' value={confirmPassword} onChange={handelChange}/>
                 <Button type='submit'>Sign up</Button>
             </form>
-        </div>
+        </StyledSignUp>
     )
 }
 

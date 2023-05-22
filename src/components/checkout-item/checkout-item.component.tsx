@@ -1,9 +1,9 @@
-import './checkout-item.style.scss';
+import * as Styled from './checkout-item.style';
 
 import { useDispatch } from 'react-redux';
 import {
     addItemToCart,
-    removeItemFromCart, 
+    removeItemFromCart,
     clearItemFromCart
 } from '../../store/cart/cart.actions';
 
@@ -28,10 +28,10 @@ const CheckoutItem: FC<CheckoutProps> = memo(({item}) => {
     const removeHandler = () => dispatch(clearItemFromCart(cartItems, item));
 
     return(
-        <div className='checkout-item-container'>
-            <div className='image-container'>
+        <Styled.CheckoutItemContainer>
+            <Styled.ImageContainer>
                 <img src={imageUrl} alt={name}/>
-            </div>
+            </Styled.ImageContainer>
             <span className='name'>{name}</span>
             
             <span className='quantity'>
@@ -42,9 +42,9 @@ const CheckoutItem: FC<CheckoutProps> = memo(({item}) => {
 
             <span className='price'>{price}</span>
             <button type='button' className='removeBtn' onClick={removeHandler}>&#10005;</button>
-        </div>
+        </Styled.CheckoutItemContainer>
     )
 });
 
-export default CheckoutItem
+export default CheckoutItem;
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
@@ -11,6 +10,9 @@ import { store, persistor } from './store/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { stripePromise } from './utils/stripe/stripe.utils';
 
+import GlobalStyle from './styles/globals';
+import { ThemeProvider } from 'styled-components';
+import theme from './styles/theme';
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 
@@ -21,7 +23,10 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Elements stripe={stripePromise}>
-            <App/>
+            <ThemeProvider theme={theme}>
+              <GlobalStyle />
+              <App/>
+            </ThemeProvider>
           </Elements>
         </BrowserRouter>
       </PersistGate>

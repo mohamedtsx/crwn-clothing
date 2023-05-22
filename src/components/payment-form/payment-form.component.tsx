@@ -1,5 +1,3 @@
-import './payment-form.style.scss';
-
 import { CardElement } from '@stripe/react-stripe-js';
 import { useStripe, useElements} from '@stripe/react-stripe-js';
 
@@ -10,6 +8,26 @@ import { selectTotalPrice } from '../../store/cart/cart.selectors';
 import { useSelector } from 'react-redux';
 import { selectCurrentUser } from '../../store/user/user.selectors';
 import { useState, FormEvent } from 'react';
+import styled from 'styled-components';
+
+
+
+
+const StyledPaymentForm = styled.form`
+    ${({theme}) => theme.mixes.flexBetween}
+    gap: 1rem;
+    width: 100%;
+`;
+
+const StyledCardContainer = styled.div`
+    flex-grow: 1;
+    height: 5rem;
+    border: 1px solid gray;
+    margin: 1rem 0;
+    padding: 1rem;
+    display: inline-block;
+`;
+
 
 
 const PaymentForm  = () => {
@@ -60,16 +78,16 @@ const PaymentForm  = () => {
     }
 
     return(
-        <form className='payment-container' onSubmit={paymentHandler}>
-            <div className='payment_form-container'>
+        <StyledPaymentForm onSubmit={paymentHandler}>
+            <StyledCardContainer>
                 <CardElement/>
-            </div>
+            </StyledCardContainer>
             <Button 
                 type='submit' 
                 buttonType={BUTTON_TYPE_CLASSES.inverted} 
                 isLoading={isLoading}
             >Pay Now</Button>
-        </form>
+        </StyledPaymentForm>
     )
 }
 

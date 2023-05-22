@@ -1,5 +1,3 @@
-import './category.style.scss';
-
 import ProductCard from '../product-card/product-card.component';
 import Spinner from '../spinner/spinner.component';
 import { useParams } from 'react-router-dom';
@@ -11,10 +9,20 @@ import {
 } from '../../store/categories/categories.selectors';
 import { useEffect, useState } from 'react';
 
+import styled from 'styled-components';
+
+
+const StyledCategory = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    row-gap: 5rem;
+    column-gap: 1rem;
+`;
 
 type CategoryRouteParams = {
     category: string;
 }
+
 
 const Category = () => {
     const { category } = useParams<keyof CategoryRouteParams>() as CategoryRouteParams;
@@ -31,12 +39,11 @@ const Category = () => {
     return(
         isLoading ? <Spinner/> : 
         <div>
-            <div className='shop_category-container'>
+            <StyledCategory>
                 {products && products.map(
                     el => <ProductCard product={el} key={el.id}/>
                 )}
-
-            </div>
+            </StyledCategory>
         </div>
     )
 }

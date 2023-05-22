@@ -1,12 +1,10 @@
 import styled, { css } from 'styled-components';
 
-const subColor = 'grey';
-const mainColor = 'black';
 
 const shrinkLabelStyle = css`
     top: -1.4rem;
-    font-size: 1.2rem;
-    color: ${mainColor};
+    font-size: var(--fz-xxs);
+    color: var(--black);
 `
 
 export const Group = styled.div`
@@ -22,7 +20,7 @@ type FormInputLabelProps = {
 }
 
 export const FormInputLabel = styled.label`
-    color: ${subColor};
+    color: var(--input-sub);
     font-size: 1.6rem;
     font-weight: normal;
     position: absolute;
@@ -38,14 +36,14 @@ export const FormInputLabel = styled.label`
 export const FormIn = styled.input`
     background: none;
     background-color: white;
-    color: ${subColor};
+    color: var(--input-sub);
     font-size: 1.8rem;
     padding: 1rem 1rem 1rem 0.5rem;
     display: block;
     width: 100%;
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid ${subColor};
+    border-bottom: 1px solid var(--input-sub);
     margin: 2.5rem 0;
 
     &:focus {

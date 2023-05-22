@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { checkUserSession } from './store/user/user.actions';
 
+
 import Spinner from './components/spinner/spinner.component';
 
 const Home = lazy(() => import('./routes/home/home.component'));

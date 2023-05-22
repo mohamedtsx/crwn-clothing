@@ -1,4 +1,4 @@
-import './category-preview.style.scss';
+import * as Styled from './category-preview.style';
 import { useNavigate } from 'react-router-dom';
 import ProductCard from '../product-card/product-card.component';
 import Spinner from '../spinner/spinner.component';
@@ -8,6 +8,8 @@ import {
     selectCategoriesIsLoading, 
     selectCategoriesMap 
 } from '../../store/categories/categories.selectors';
+
+
 
 
 const CategoryPreview = () => {
@@ -20,22 +22,22 @@ const CategoryPreview = () => {
 
     return(
         isLoading ? <Spinner/> : 
-        <div className='categories-container'>
+        <Styled.CategoriesContainer>
         {
             Object.keys(categoriesMap).map(title => {
                 const categoryShortMap = categoriesMap[title].filter(( _, index) => index < 4);
                 
                 return(
                     <div key={title} >
-                        <h2 onClick={() => navigate(`${title}`)} className='category-header'>{title}</h2>
-                        <div className='category-items'>
+                        <Styled.CategoryHeader onClick={() => navigate(`${title}`)}>{title}</Styled.CategoryHeader>
+                        <Styled.CategoryItems>
                             {categoryShortMap.map(el => <ProductCard product={el} key={el.id}/>)}
-                        </div>
+                        </Styled.CategoryItems>
                     </div>
                 );
             })
         }
-        </div>
+        </Styled.CategoriesContainer>
     )
 }
 

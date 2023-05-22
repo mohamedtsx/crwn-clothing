@@ -1,4 +1,4 @@
-import './product-card.style.scss';
+import * as Styled from './product-card.style';
 import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 import { useDispatch } from 'react-redux';
@@ -24,19 +24,18 @@ const ProductCard: FC<ProductCardProps> = ({product}) => {
 
 
   return(
-    <div className='product-card-container'>
-        <img src={imageUrl} alt={name}/>
-        <div className='footer'>
-            <span className='name'>{name}</span>
-            <span className='price'>{price}</span>
-        </div>
-        
-        <Button 
+    <Styled.ProductCardContainer>
+        <Styled.CardImage src={imageUrl} alt={name}/>
+        <Styled.CardButton 
           buttonType={BUTTON_TYPE_CLASSES.inverted} 
           type='button' 
           onClick={handelAddProduct}
-        >Add to card</Button>
-    </div>
+        >Add to card</Styled.CardButton>
+        <Styled.Caption>
+            <span className='name'>{name}</span>
+            <span className='price'>{price}</span>
+        </Styled.Caption>
+    </Styled.ProductCardContainer>
   );
 
 }
