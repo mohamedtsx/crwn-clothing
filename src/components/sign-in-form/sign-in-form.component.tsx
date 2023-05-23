@@ -21,12 +21,30 @@ export const StyledSignUp = styled.div`
     span { 
         color: var(--text);
     }
+
+
+    @media screen and (max-width: 40em) {
+      h2 {
+        font-size: 1.6rem;
+      }
+      span {
+        font-size: 1.4rem;
+      }
+    }
 `
 const StyledButtons = styled.div`
     ${({theme}) => theme.mixes.flexBetween};
     gap: 15px;
 `
 
+const StyledButton = styled(Button)`
+    @media only screen and (max-width: 45em) {
+        min-width: 12rem;
+        padding: 0.5rem 1rem;
+        line-height: 1.5;
+        height: auto;
+    }
+`
 
 const defaultFormFields = {
     email: '',
