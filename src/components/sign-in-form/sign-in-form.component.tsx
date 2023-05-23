@@ -23,24 +23,25 @@ export const StyledSignUp = styled.div`
     }
 
 
-    @media screen and (max-width: 40em) {
-      h2 {
-        font-size: 1.6rem;
-      }
-      span {
-        font-size: 1.4rem;
-      }
+    @media screen and (max-width: 45em) {
+        width: 100%;
+        h2 {
+            font-size: 1.6rem;
+        }
+        span {
+            font-size: 1.4rem;
+        }
     }
 `
-const StyledButtons = styled.div`
+const StyledButtonsContainer = styled.div`
     ${({theme}) => theme.mixes.flexBetween};
     gap: 15px;
 `
 
-const StyledButton = styled(Button)`
+export const StyledButton = styled(Button)`
     @media only screen and (max-width: 45em) {
         min-width: 12rem;
-        padding: 0.5rem 1rem;
+        padding: 1rem 2rem;
         line-height: 1.5;
         height: auto;
     }
@@ -102,14 +103,14 @@ const SignIn = () => {
                     onChange={handelChange} 
                     required
                 />
-                <StyledButtons>
-                    <Button type='submit'>Sign in</Button>
-                    <Button 
+                <StyledButtonsContainer>
+                    <StyledButton type='submit'>Sign in</StyledButton>
+                    <StyledButton 
                         buttonType={BUTTON_TYPE_CLASSES.google} 
                         type='button' 
                         onClick={googleSignIn}
-                    >Google sign in</Button>
-                </StyledButtons>
+                    >Google sign in</StyledButton>
+                </StyledButtonsContainer>
             </form>
         </StyledSignUp>
     )

@@ -2,7 +2,7 @@ import { useState, FormEvent, ChangeEvent } from 'react';
 import { AuthError, AuthErrorCodes } from 'firebase/auth';
 
 import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import { StyledButton } from '../sign-in-form/sign-in-form.component';
 import { signUpStart } from '../../store/user/user.actions';
 import { useDispatch } from 'react-redux';
 
@@ -90,7 +90,7 @@ const SignUp = () => {
                     onChange={handelChange} 
                     required
                 />
-                <Button type='submit'>Sign up</Button>
+                <StyledButton type='submit'>Sign up</StyledButton>
             </form>
         </StyledSignUp>
     )
