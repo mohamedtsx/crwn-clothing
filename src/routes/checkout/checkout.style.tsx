@@ -4,7 +4,7 @@ export const Checkout = styled.div`
     width: 55%;
     min-width: min(45rem, 90%);
     min-height: 90%;
-    margin: auto;
+    margin: 0 auto;
 
 `;
 

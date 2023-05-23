@@ -8,8 +8,12 @@ const StyledAuthentication = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 3rem;
-    max-width: 90rem;
+    max-width: min(90rem, 95%);
     margin: 3rem auto;
+
+    /* @media screen and (max-width: 45em) {
+        padding: 4vw;
+    } */
 `;
 
 const Authentication = () => {

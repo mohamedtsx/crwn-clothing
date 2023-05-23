@@ -41,10 +41,6 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-size: 1.6rem;
     line-height: 1.3;
-
-    @media screen and (max-width: 40em) {
-      padding: 0 4vw;
-    }
   }
 
 
