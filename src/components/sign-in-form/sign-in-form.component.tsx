@@ -41,6 +41,7 @@ const StyledButtonsContainer = styled.div`
 export const StyledButton = styled(Button)`
     @media only screen and (max-width: 45em) {
         min-width: 12rem;
+        flex-grow: 1;
         padding: 1rem 2rem;
         line-height: 1.5;
         height: auto;
