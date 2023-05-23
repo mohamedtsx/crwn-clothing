@@ -18,7 +18,7 @@ export const ItemDetails = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 2rem 0.4rem;
 
   .name {
     font-size: 1.6rem;

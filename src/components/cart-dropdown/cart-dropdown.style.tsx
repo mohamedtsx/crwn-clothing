@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../button/button.component";
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
@@ -55,4 +56,9 @@ export const Back = styled.div`
       opacity: 1;
     }
   }
+`
+
+export const CheckoutButton = styled(Button)`
+  letter-spacing: 4px;
+  font-size: var(--fz-md);
 `

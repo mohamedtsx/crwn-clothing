@@ -1,4 +1,4 @@
-import { CartDropdownContainer, CartItems, Back } from './cart-dropdown.style';
+import { CartDropdownContainer, CartItems, Back, CheckoutButton } from './cart-dropdown.style';
 import Button from '../button/button.component';
 import CartItem from '../cart-item/cart-item.component';
 import { useNavigate } from 'react-router-dom';
@@ -33,10 +33,10 @@ const CartDropdown = () => {
                     )): <span className='empty-message'>Your cart is empty</span>}
                 </CartItems>
                 
-                <Button type='button' className='button' onClick={() => {
+                <CheckoutButton type='button' className='button' onClick={() => {
                     dispatch(setIsCartOpen())
                     navigate('/checkout')
-                }}>CHECKOUT</Button>
+                }}>checkout</CheckoutButton>
             </CartDropdownContainer>
         </>
     )
