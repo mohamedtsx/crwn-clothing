@@ -22,6 +22,7 @@ export const NavLink = styled(Link)`
   padding: 1rem 1.5rem;
   cursor: pointer;
   word-spacing: -5px;
+  color: var(--title);
 `
 export const NavLinkSpan = styled.span`
   padding: 1rem 1.5rem;
@@ -31,7 +32,6 @@ export const LogoContainer = styled(Link)`
   height: 100%;
   width: 7rem;
   padding: 2.5rem;
-  color: var(--title);
 
   display: grid;
   align-content: center;
