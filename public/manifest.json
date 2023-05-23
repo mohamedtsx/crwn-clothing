@@ -1,5 +1,5 @@
 {
-  "name": "Mohamed Khalid",
+  "name": "Crown Clothes By Mohamed",
   "short_name": "Crown Clothes",
   "icons": [
     {
@@ -14,12 +14,13 @@
         "purpose": "any maskable"
     },
     {
-        "src": "android-chrome-384x384.png",
+        "src": "android-chrome-512x512.png",
         "sizes": "384x384",
         "type": "image/png",
         "purpose": "any maskable"
     }
-  ],
+  ],  
+  "start_url": ".",
   "theme_color": "#16161e",
   "background_color": "#16161e",
   "display": "standalone"
