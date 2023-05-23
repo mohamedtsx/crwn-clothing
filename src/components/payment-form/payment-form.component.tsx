@@ -42,6 +42,14 @@ const StyledCardContainer = styled.div`
 const PayButton = styled(Button)`
     width: 8rem;
     align-self: end;
+    ${({theme}) => theme.mixes.flexCenter};
+
+    @media only screen and (max-width: 45em) {
+        min-width: 12rem;
+        padding: 0.5rem 1rem;
+        line-height: 1.5;
+        height: auto;
+    }
 `
 
 const StyledTotalPrice = styled.span`
@@ -73,7 +81,12 @@ const PaymentForm  = () => {
              'Content-Type':'application/json'
            },
            body: JSON.stringify({ amount: amount*100 })  
-        }).then(response => response.json());
+        }).then(response => response.json()).catch(error => {
+            setIsLoading(false);
+            alert(error)
+        });
+
+        if(!response) return;
 
         const { paymentIntent: { client_secret } } = await response;
         const cardDetails = elements.getElement(CardElement);

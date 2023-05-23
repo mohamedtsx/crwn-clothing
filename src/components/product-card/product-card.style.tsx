@@ -9,6 +9,7 @@ export const ProductCardContainer = styled.div`
   position: relative;
   transition: box-shadow 0.2s ease-in-out;
 
+
   &:hover {
       img {
         opacity: 0.8;
@@ -26,6 +27,7 @@ export const CardImage = styled.img`
   height: 100%;
   overflow: hidden;
   object-fit: cover;
+  object-position: 100% 0;
   margin-bottom: 0.5rem;
 `;
 

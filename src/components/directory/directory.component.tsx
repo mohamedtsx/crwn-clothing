@@ -40,9 +40,9 @@ const categories: DirectoryCategory[] =   [
   },
   {
     id: 4,
-    title: 'womens',
-    imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-    route: 'shop/womens',
+    title: 'kids',
+    imageUrl: 'https://i.pinimg.com/564x/fc/2e/19/fc2e1946cfe4412238b565f139161d70.jpg',
+    route: 'shop/kids',
   },
   {
     id: 5,
