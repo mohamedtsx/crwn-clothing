@@ -31,6 +31,7 @@ export const LogoContainer = styled(Link)`
   height: 100%;
   width: 7rem;
   padding: 2.5rem;
+  color: var(--title);
 
   display: grid;
   align-content: center;

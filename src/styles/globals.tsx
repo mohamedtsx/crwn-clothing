@@ -23,6 +23,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     min-height: 100%;
     width: 100%;
