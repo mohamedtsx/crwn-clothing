@@ -41,6 +41,8 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     font-size: 1.6rem;
     line-height: 1.3;
+
+    position: relative;
   }
 
 
