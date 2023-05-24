@@ -1,11 +1,8 @@
 # crwn-clothing
-
-## go to 
+Feature-rich e-commerce built in React utilizing Firebase for the backend and Stripe API for secure payments. I strove to create a high-quality codebase and optimized user experience, applying best practices and everything I learned.
 - [Live Demo](https://mohamedtsx-crown.netlify.app)
-- [Course Link](https://www.udemy.com/share/101WH43@yukzjcpy8S4tu-NSXEon7iYbj4BFdQQKm7i8UNr86R5yUumF9KS6cDJ_blI4jpj37g==/)
+
 
 ## Built With 
 <img src="https://skillicons.dev/icons?i=html,scss,js,react,redux,firebase" />
-
-> Finale Project Incomplete...
 
