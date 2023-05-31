@@ -3,34 +3,32 @@ import { FirebaseError } from "firebase/app";
 import { useDispatch } from "react-redux";
 import { clearAuthError } from "../../store/user/user.actions";
 
+import CloseIcon from '../../assets/close.svg';
+
 type ErrorProps = {
     error: FirebaseError
 }
 
 
 const StyledError = styled.div`
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    display: flex;
-    justify-content: left;
-    padding: 20px;
-    gap: 10px;
-    align-items: center;
-    border-radius: 0.5rem;
-    transition: all 0.8s;
-    border: 1px solid red;
-    transform: translateX(-50%);
+  background-color: #ffebeb;
+  border: 1px solid #ff7f7f;
+  color: red;
+  padding: 1rem 2rem;
+  margin-bottom: 10px;
+  width: fit-content;
 
-    p {
-        color: #c00;
-        font-size: var(--fz-md);
-    }
-    img {
-        width: 20px;
-    }
+  z-index: 100;
+  border-radius: 4px;
+  display: flex;
+  gap: 15px;
 
-`
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%);
+
+`;
 
 const RmButton = styled.span`
     ${({theme}) => theme.mixes.flexCenter};
@@ -43,15 +41,13 @@ const Error = ({error}: ErrorProps) => {
 
     setTimeout(() => {
         dispatch(clearAuthError())
-    }, 3000);
+    }, 6000);
 
     return(
         <StyledError>
             <p>{error.code}</p>
             <RmButton onClick={() => dispatch(clearAuthError())}>
-                <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/1024px-Cross_red_circle.svg.png" 
-                />
+                <img src={CloseIcon}/>
             </RmButton>
         </StyledError>
     )
